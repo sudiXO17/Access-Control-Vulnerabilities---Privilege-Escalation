@@ -96,17 +96,6 @@ User chat logs stored like:
 
 ---
 
-## 🔐 Key Difference Between the Two:
-
-| Aspect                   | Horizontal Privilege Escalation | IDOR                                     |
-| ------------------------ | ------------------------------- | ---------------------------------------- |
-| What it targets          | Other users’ data or actions    | Any object like files, records, accounts |
-| Based on                 | Access level comparison         | Direct reference in URLs or parameters   |
-| Requires authentication? | Usually yes                     | Often yes, but still exploitable         |
-| Main issue               | No proper authorization check   | No validation of object ownership        |
-
----
-
 ## 🔼 Vertical Privilege Escalation (Low-privileged user ➔ High-privileged user)
 
 #### 💡 What It Means:
@@ -166,16 +155,6 @@ X-Original-URL: /admin/deleteUser
 
 ---
 
-## 🧠 Summary Table
-
-| Technique                 | Risk                              | Example                       |
-| ------------------------- | --------------------------------- | ----------------------------- |
-| Unprotected Functionality | Direct access to admin pages      | /admin, found via robots.txt  |
-| Parameter Tampering       | Bypass via query param            | ?admin=true                   |
-| Header Misuse             | Access via headers                | X-Original-URL, X-Rewrite-URL |
-| URL Pattern Tricks        | Match using uppercase, extensions | /ADMIN/DELETEUSER.any         |
-
----
 
 ## 🧹 Other Access Control Weaknesses
 
